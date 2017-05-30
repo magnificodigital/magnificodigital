@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying all single posts and attachments.
  *
@@ -6,7 +7,9 @@
  */
 
 get_header();
+?>
 
+<?php
 $classes = '';
 $sidebar_location = get_sidebar_location();
 

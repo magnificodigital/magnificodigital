@@ -445,21 +445,21 @@ function melinda_post_navigation($fixed = false) {
 	if ($fixed) {
 		$prev = get_previous_post_link(
 			'<li class="post-nav-prev __fixed">%link</li>',
-			'<span class="icon-arrow-left post-nav-prev_ic"></span><span class="post-nav-prev_desc">' . esc_html__('Previous reading', 'melinda') . '</span><span class="post-nav-prev_h">%title</span>'
+			'<span class="icon-arrow-left post-nav-prev_ic"></span><span class="post-nav-prev_desc">' . esc_html__('Ler anterior', 'melinda') . '</span><span class="post-nav-prev_h">%title</span>'
 		);
 		$next = get_next_post_link(
 			'<li class="post-nav-next __fixed">%link</li>',
-			'<span class="icon-arrow-right post-nav-next_ic"></span><span class="post-nav-next_desc">' . esc_html__('Next reading', 'melinda') . '</span><span class="post-nav-next_h">%title</span>'
+			'<span class="icon-arrow-right post-nav-next_ic"></span><span class="post-nav-next_desc">' . esc_html__('Ler próximo', 'melinda') . '</span><span class="post-nav-next_h">%title</span>'
 		);
 		$classes = '__fixed';
 	} else {
 		$prev = get_previous_post_link(
 			'<li class="post-nav-prev">%link</li>',
-			'<span class="icon-arrow-left post-nav-prev_ic"></span><span class="post-nav-prev_desc">' . esc_html__('Previous reading', 'melinda') . '</span><span class="post-nav-prev_h">%title</span>'
+			'<span class="icon-arrow-left post-nav-prev_ic"></span><span class="post-nav-prev_desc">' . esc_html__('Ler anterior', 'melinda') . '</span><span class="post-nav-prev_h">%title</span>'
 		);
 		$next = get_next_post_link(
 			'<li class="post-nav-next">%link</li>',
-			'<span class="icon-arrow-right post-nav-next_ic"></span><span class="post-nav-next_desc">' . esc_html__('Next reading', 'melinda') . '</span><span class="post-nav-next_h">%title</span>'
+			'<span class="icon-arrow-right post-nav-next_ic"></span><span class="post-nav-next_desc">' . esc_html__('Ler próximo', 'melinda') . '</span><span class="post-nav-next_h">%title</span>'
 		);
 	}
 

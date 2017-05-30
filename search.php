@@ -1,43 +1,37 @@
-<?php
-/**
- * The template for displaying search results pages.
- *
- * @package melinda
- */
-
-get_header(); ?>
-
-	<?php if (have_posts()) { ?>
-
-		<div class="search-page">
-			<p><?php esc_html_e('If you are not happy with the results below please do another search.', 'melinda'); ?></p>
-			<?php get_search_form(); ?>
+<?php get_template_part('blognovo/header','blog'); ?>
+<section id="search-page">
+	<div class="headerWrapper" style="background-image: url('<?php bloginfo('template_url') ?>/blognovo/img/search.jpg');">
+		<div class="container">
+			<p class="before-query">Olá, veja o que encontramos para:</p>
+			<h1 class="result verde"><?php echo get_search_query() ?></h1>
 		</div>
+	</div>
 
-		<div class="row js--masonry">
 
-			<?php
-			$classes = get_responsive_column_classes(get_theme_option('search--columns'));
+	<div class="container">
 
-			$classes[] = 'animate-on-screen js--animate-on-screen';
+		<div class="row">
+			
+	        <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+	            
+	            	<div class="col-md-3 col-sm-6 col-xs-12">
+						<figure class="post">
+							<a href="<?php the_permalink(); ?>">
+								<div class="thumbnail" style="background-image: url('<?php the_post_thumbnail('index_row1_2'); ?>')"></div>
+							</a>
+							<div class="title-wrapper">
+								<a href="<?php the_permalink(); ?>"><h4><?php the_title() ?></h4></a>
+							</div>
+						</figure>
+					</div>
 
-			while (have_posts()) { the_post();
-			?>
+	        <?php endwhile; endif ?>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?>>
-					<?php get_template_part( 'content', 'search' ); ?>
-				</article>
+        </div>
 
-			<?php } ?>
+    </div>
 
-		</div>
 
-		<?php melinda_posts_navigation(); ?>
+</section>
+<?php get_template_part('blognovo/footer','blog'); ?>
 
-	<?php } else { ?>
-
-		<?php get_template_part( 'content', 'none' ); ?>
-
-	<?php } ?>
-
-<?php get_footer(); ?>

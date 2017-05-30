@@ -639,3 +639,35 @@ add_filter('excerpt_more', 'melinda_excerpt_more', 999);
 function melinda_excerpt_more() {
 	return '...';
 }
+
+
+//Search form
+function my_search_form($form) {
+	$form = '<form method="get" id="searchform" class="searchform" action="' . get_option('home') . '/" >
+	<div>
+	<input type="text" value="' . attribute_escape(apply_filters('the_search_query', get_search_query())) . '" name="s" id="s" placeholder="Está procurando algo? Digite aqui..." />
+	<button type="submit" id="searchsubmit"><i class="fa fa-search" aria-hidden="true"></i></button>
+	</div>
+	</form>';
+	return $form;
+}
+
+add_filter('get_search_form', 'my_search_form');
+
+//Thubmnails
+add_image_size('single',1200,900, true);
+//add_image_size('index_row1',563,250, true);
+add_image_size('index_row2',360,250, true);
+add_image_size('post_sidebar',410,210, true);
+add_image_size('post_archive',735,400, true);
+
+
+//Excluir paginas da pesquisa
+function SearchFilter($query) {
+	if ($query->is_search) {
+		$query->set('post_type', 'post');
+	}
+	return $query;
+}
+
+add_filter('pre_get_posts','SearchFilter');

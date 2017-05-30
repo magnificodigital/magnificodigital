@@ -98,7 +98,7 @@ $subcat_image_src = melinda_wc_get_subcat_image_src();
 
 		} elseif (is_search()) {
 
-			printf( esc_html__( 'Search Results for: %s', 'melinda' ), '<span>' . get_search_query() . '</span>' );
+			printf( esc_html__( 'Resultados para: %s', 'melinda' ), '<span>' . get_search_query() . '</span>' );
 
 		} elseif (!have_posts()) {
 

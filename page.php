@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying all pages.
  *
@@ -9,6 +10,17 @@
  *
  * @package melinda
  */
+
+if (is_page('descobrir')) {
+
+	wp_redirect('http://materiais.magnificodigital.com/raio-x-do-marketing-digital');
+	exit;
+
+} elseif (is_page('blog')) {
+
+	get_template_part('blognovo/blognovo');
+
+} else {
 
 get_header(); ?>
 
@@ -35,4 +47,9 @@ get_header(); ?>
 
 	<?php } // end of the loop. ?>
 
-<?php get_footer(); ?>
+<?php
+	get_footer();
+	}
+?>
+
+

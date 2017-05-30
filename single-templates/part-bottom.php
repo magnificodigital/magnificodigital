@@ -25,7 +25,7 @@ wp_link_pages( array(
 		?><div class="col-sm-5 col-md-4 text-left"><a class="t-w-post-author" href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
 			<span class="t-w-post-author_img"><?php echo get_avatar(get_the_author_meta('email') , 100); ?></span>
 			<span class="t-w-post-author_h">
-				<span class="t-w-post-author_sub-h"><?php esc_html_e('Posted by', 'melinda')?></span>
+				<span class="t-w-post-author_sub-h"><?php esc_html_e('Postado por', 'melinda')?></span>
 				<span class="t-w-post-author_name"><?php the_author(); ?></span>
 			</span>
 		</a></div><?php
