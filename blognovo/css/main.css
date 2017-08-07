@@ -380,11 +380,13 @@ header#site {
 #single-page .content-post,
 #search-page .content-post {
   padding: 50px 0; }
-  #single-post .content-post p, #single-post .content-post ul,
+  #single-post .content-post p, #single-post .content-post ul, #single-post .content-post ol,
   #single-page .content-post p,
   #single-page .content-post ul,
+  #single-page .content-post ol,
   #search-page .content-post p,
-  #search-page .content-post ul {
+  #search-page .content-post ul,
+  #search-page .content-post ol {
     font-size: 18px;
     line-height: 1.5; }
   #single-post .content-post a,
